@@ -169,7 +169,6 @@
               </div>
             </div>
 
-
             <!-- ML & AI Skills Section -->
             <div class="skill-section">
               <h3>ML & AI</h3>
@@ -487,7 +486,7 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>2023</span></strong>
+        &copy; Copyright <strong><span id="copyright-year"></span></strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -516,6 +515,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Script to dynamically set copyright year -->
+  <script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 
