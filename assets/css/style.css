@@ -235,7 +235,6 @@ h6 {
   left: 0;
 }
 
-
 /*
 #Next Portfolio
 */
@@ -254,7 +253,6 @@ h6 {
 .next-portfolio i {
   margin-left: 10px; /* Add some space between the text and the icon */
 }
-
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -311,13 +309,14 @@ h6 {
   }
 }
 
+/* Media query for hero section already exists, keep it */
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 28px; /* Keep existing adjustment */
     line-height: 36px;
   }
 
-  #hero h2 {
+  #hero h2 { /* This rule seems unused in index.html hero, but keep for safety */
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -451,49 +450,127 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+/* Removed old .skills .progress rules */
+/* Removed old .skills .progress .skill rules */
+/* Removed old .skills .progress-bar-wrap rules */
+/* Removed old .skills .progress-bar rules */
+
+/* New Skills Layout */
+.skills .skills-content {
+  /* Using Bootstrap row/col, no extra flex needed here */
 }
 
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+.skills .skill-section {
+  margin-bottom: 30px; /* Space between sections vertically */
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skills .skill-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #173b6c;
 }
 
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
+.skills .skill-boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Spacing between skill boxes */
 }
 
 .skill-box {
-  display: inline-block; /* Make skill boxes inline */
-  margin: 0 8px 15px; /* Add some spacing between boxes */
-  padding: 5px;
-  border: 3px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff; /* Adjust the background color as needed */
+  /* display: inline-block; /* Replaced by flex */
+  margin: 0; /* Reset margin, handled by gap */
+  padding: 8px 12px; /* Adjust padding */
+  border: 2px solid #ddd; /* Slightly thinner border */
+  border-radius: 6px; /* Slightly smaller radius */
+  background-color: #fff;
+  flex-grow: 0; /* Prevent boxes from growing */
+  /* Keep skill text styling */
+}
+
+.skill-box .skill strong {
+ font-weight: 600;
+ font-family: "Poppins", sans-serif;
+ color: #050d18;
+ font-size: 14px; /* Ensure consistent font size */
+}
+
+/*--------------------------------------------------------------
+# Responsive Adjustments (Combined)
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0; /* Reduce padding on smaller screens */
+  }
+
+  .section-title h2 {
+    font-size: 28px; /* Slightly smaller headings */
+  }
+
+  /* Adjust hero heading/paragraph size (overrides existing @768) */
+  #hero h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  #hero p {
+    font-size: 20px;
+  }
+
+  .facts .count-box span {
+    font-size: 36px; /* Adjust facts counter size */
+    margin-left: 50px; /* Adjust margin */
+  }
+  .facts .count-box p {
+     margin-left: 50px; /* Adjust margin */
+  }
+   .facts .count-box i {
+    font-size: 36px; /* Adjust icon size */
+  }
+
+  .contact .info h4 {
+    font-size: 20px; /* Adjust contact info heading */
+    padding-left: 55px;
+  }
+   .contact .info p {
+    padding-left: 55px;
+  }
+  .contact .info i {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container,
+  .container-fluid {
+    padding-left: 15px; /* Further reduce padding on very small screens */
+    padding-right: 15px;
+  }
+   #hero h1 {
+    font-size: 32px; /* Further adjust hero heading */
+    line-height: 36px;
+  }
+
+  #hero p {
+    font-size: 18px; /* Further adjust hero paragraph */
+  }
+
+  .facts .count-box {
+    padding: 20px 15px; /* Adjust padding */
+  }
+  .facts .count-box span {
+    font-size: 32px; /* Further adjust facts counter */
+  }
+
+  .skill-box {
+    padding: 6px 10px; /* Smaller padding for skill boxes */
+  }
+  .skill-box .skill strong {
+    font-size: 13px; /* Smaller font for skills */
+  }
 }
 
 
